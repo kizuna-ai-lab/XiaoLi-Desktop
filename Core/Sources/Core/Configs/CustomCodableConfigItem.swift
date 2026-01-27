@@ -61,7 +61,7 @@ extension Config {
 
         public init() {}
         static let `default`: Value = .inputAndOutput
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.learning"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.learning"
     }
 }
 
@@ -105,9 +105,9 @@ extension Config {
         }
 
         public static let `default`: Value = .init(items: [
-            .init(word: "azooKey", reading: "あずーきー", hint: "アプリ")
+            .init(word: "XiaoLi", reading: "しゃおりー", hint: "アプリ")
         ])
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.user_dictionary_temporal2"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.user_dictionary_temporal2"
     }
 
     public struct SystemUserDictionary: CustomCodableConfigItem {
@@ -123,7 +123,7 @@ extension Config {
         }
 
         public static let `default`: Value = .init(items: [])
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.system_user_dictionary"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.system_user_dictionary"
     }
 }
 
@@ -152,7 +152,7 @@ extension Config {
 
         public init() {}
         public static let `default`: Value = .normal
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.zenzai.personalization_level"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.zenzai.personalization_level"
     }
 }
 
@@ -168,7 +168,7 @@ extension Config {
 
         public init() {}
         public static let `default`: Value = .default
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.input_style"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.input_style"
     }
 }
 
@@ -200,7 +200,7 @@ extension Config {
 
         public init() {}
         public static let `default`: Value = .qwerty
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.keyboard_layout"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.keyboard_layout"
     }
 
     public struct AIBackendPreference: CustomCodableConfigItem {
@@ -221,6 +221,6 @@ extension Config {
             }
             return .off
         }
-        public static let key: String = "dev.ensan.inputmethod.azooKeyMac.preference.aiBackend"
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.aiBackend"
     }
 }

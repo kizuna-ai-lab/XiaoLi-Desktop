@@ -4,7 +4,7 @@ import Foundation
 import InputMethodKit
 
 // MARK: - Selected Text Transform Methods
-extension azooKeyMacInputController {
+extension XiaoLiInputController {
 
     // MARK: - Constants
     private enum Constants {

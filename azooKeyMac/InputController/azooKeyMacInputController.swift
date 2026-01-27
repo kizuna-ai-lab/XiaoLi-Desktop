@@ -3,8 +3,8 @@ import Core
 import InputMethodKit
 import KanaKanjiConverterModuleWithDefaultDictionary
 
-@objc(azooKeyMacInputController)
-class azooKeyMacInputController: IMKInputController, NSMenuItemValidation { // swiftlint:disable:this type_name
+@objc(XiaoLiInputController)
+class XiaoLiInputController: IMKInputController, NSMenuItemValidation { // swiftlint:disable:this type_name
     var segmentsManager: SegmentsManager
     private(set) var inputState: InputState = .none
     private var inputLanguage: InputLanguage = .japanese
@@ -61,22 +61,22 @@ class azooKeyMacInputController: IMKInputController, NSMenuItemValidation { // s
     override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
         let applicationDirectoryURL = if #available(macOS 13, *) {
             URL.applicationSupportDirectory
-            .appending(path: "azooKey", directoryHint: .isDirectory)
+            .appending(path: "XiaoLiIME", directoryHint: .isDirectory)
             .appending(path: "memory", directoryHint: .isDirectory)
         } else {
             FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-            .appendingPathComponent("azooKey", isDirectory: true)
+            .appendingPathComponent("XiaoLiIME", isDirectory: true)
             .appendingPathComponent("memory", isDirectory: true)
         }
 
-        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.dev.ensan.inputmethod.azooKeyMac")
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.kizuna.inputmethod.XiaoLiIME")
         self.segmentsManager = SegmentsManager(
             kanaKanjiConverter: (NSApplication.shared.delegate as? AppDelegate)!.kanaKanjiConverter,
             applicationDirectoryURL: applicationDirectoryURL,
             containerURL: containerURL
         )
 
-        self.appMenu = NSMenu(title: "azooKey")
+        self.appMenu = NSMenu(title: "XiaoLi")
         self.liveConversionToggleMenuItem = NSMenuItem()
         self.transformSelectedTextMenuItem = NSMenuItem()
 
@@ -498,10 +498,10 @@ class azooKeyMacInputController: IMKInputController, NSMenuItemValidation { // s
         client.overrideKeyboard(withKeyboardNamed: Config.KeyboardLayout().value.layoutIdentifier)
         switch language {
         case .english:
-            client.selectMode("dev.ensan.inputmethod.azooKeyMac.Roman")
+            client.selectMode("ai.kizuna.inputmethod.XiaoLiIME.Roman")
             self.segmentsManager.stopJapaneseInput()
         case .japanese:
-            client.selectMode("dev.ensan.inputmethod.azooKeyMac.Japanese")
+            client.selectMode("ai.kizuna.inputmethod.XiaoLiIME.Japanese")
         }
     }
 
@@ -725,7 +725,7 @@ class azooKeyMacInputController: IMKInputController, NSMenuItemValidation { // s
     }
 }
 
-extension azooKeyMacInputController: CandidatesViewControllerDelegate {
+extension XiaoLiInputController: CandidatesViewControllerDelegate {
     func candidateSubmitted() {
         Task { @MainActor in
             self.submitSelectedCandidate()
@@ -739,7 +739,7 @@ extension azooKeyMacInputController: CandidatesViewControllerDelegate {
     }
 }
 
-extension azooKeyMacInputController: SegmentManagerDelegate {
+extension XiaoLiInputController: SegmentManagerDelegate {
     func getLeftSideContext(maxCount: Int) -> String? {
         let endIndex = client().markedRange().location
         let leftRange = NSRange(location: max(endIndex - maxCount, 0), length: min(endIndex, maxCount))
@@ -751,7 +751,7 @@ extension azooKeyMacInputController: SegmentManagerDelegate {
     }
 }
 
-extension azooKeyMacInputController: ReplaceSuggestionsViewControllerDelegate {
+extension XiaoLiInputController: ReplaceSuggestionsViewControllerDelegate {
     @MainActor func replaceSuggestionSelectionChanged(_ row: Int) {
         self.segmentsManager.requestSelectingSuggestionRow(row)
     }
@@ -774,7 +774,7 @@ extension azooKeyMacInputController: ReplaceSuggestionsViewControllerDelegate {
 }
 
 // Suggest Candidate
-extension azooKeyMacInputController {
+extension XiaoLiInputController {
     // MARK: - Replace Suggestion Request Handling
     @MainActor func requestReplaceSuggestion() {
         self.segmentsManager.appendDebugMessage("requestReplaceSuggestion: 開始")

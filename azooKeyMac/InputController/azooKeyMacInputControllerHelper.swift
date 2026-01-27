@@ -2,7 +2,7 @@ import Cocoa
 import Core
 import InputMethodKit
 
-extension azooKeyMacInputController {
+extension XiaoLiInputController {
     // MARK: - Settings and Menu Items
 
     func setupMenu() {
@@ -94,7 +94,7 @@ extension azooKeyMacInputController {
     }
 
     @objc func openGitHubRepository(_ sender: Any) {
-        guard let url = URL(string: "https://github.com/azooKey/azooKey-Desktop") else {
+        guard let url = URL(string: "https://github.com/XiaoLi-IME/XiaoLi-Desktop") else {
             return
         }
         NSWorkspace.shared.open(url)

@@ -315,7 +315,7 @@ struct ConfigWindow: View {
                         }
                     }
                 } label: {
-                    Text("azooKeyユーザ辞書")
+                    Text("XiaoLiユーザ辞書")
                 }
                 LabeledContent {
                     HStack {

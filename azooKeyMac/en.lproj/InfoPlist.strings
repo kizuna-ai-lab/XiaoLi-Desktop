@@ -1,12 +1,12 @@
-/* 
+/*
   InfoPlist.strings
-  azooKeyMac
+  XiaoLiIME
 
   Created by miwa on 2024/03/20.
-  
+
 */
 
-CFBundleName = "azooKey";
+CFBundleName = "XiaoLi";
 
-com.apple.inputmethod.Roman = "azooKey (English)";
-com.apple.inputmethod.Japanese = "azooKey (日本語)";
+com.apple.inputmethod.Roman = "XiaoLi (English)";
+com.apple.inputmethod.Japanese = "XiaoLi (日本語)";

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <installer-gui-script minSpecVersion="1">
-    <pkg-ref id="dev.ensan.inputmethod.azooKeyMac"/>
-    <title>azooKey</title>
+    <pkg-ref id="ai.kizuna.inputmethod.XiaoLiIME"/>
+    <title>XiaoLi</title>
     <options customize="never" require-scripts="false" hostArchitectures="x86_64,arm64"/>
     <choices-outline>
         <line choice="default">
-            <line choice="dev.ensan.inputmethod.azooKeyMac"/>
+            <line choice="ai.kizuna.inputmethod.XiaoLiIME"/>
         </line>
     </choices-outline>
     <choice id="default"/>
-    <choice id="dev.ensan.inputmethod.azooKeyMac" visible="false">
-        <pkg-ref id="dev.ensan.inputmethod.azooKeyMac"/>
+    <choice id="ai.kizuna.inputmethod.XiaoLiIME" visible="false">
+        <pkg-ref id="ai.kizuna.inputmethod.XiaoLiIME"/>
     </choice>
-    <pkg-ref id="dev.ensan.inputmethod.azooKeyMac" version="0" onConclusion="none">azooKey-tmp.pkg</pkg-ref>
+    <pkg-ref id="ai.kizuna.inputmethod.XiaoLiIME" version="0" onConclusion="none">XiaoLi-tmp.pkg</pkg-ref>
 </installer-gui-script>

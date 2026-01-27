@@ -16,7 +16,7 @@ extension StringConfigItem {
 
 extension Config {
     struct OpenAiApiKey: StringConfigItem {
-        static var key: String = "dev.ensan.inputmethod.azooKeyMac.preference.OpenAiApiKey"
+        static var key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.OpenAiApiKey"
 
         private static var cachedValue: String = ""
         private static var isLoaded: Bool = false

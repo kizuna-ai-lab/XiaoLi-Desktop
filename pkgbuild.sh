@@ -58,27 +58,27 @@ rm ${EXPORT_PATH}/ExportOptions.plist
 
 # Create a temporary package
 pkgbuild --root ${EXPORT_PATH} \
-         --component-plist pkg.plist --identifier dev.ensan.inputmethod.azooKeyMac \
+         --component-plist pkg.plist --identifier ai.kizuna.inputmethod.XiaoLiIME \
          --version 0 \
          --install-location /Library/Input\ Methods \
-         azooKey-tmp.pkg
+         XiaoLi-tmp.pkg
 
 # Create a distribution file
-# productbuild --synthesize --package azooKey-tmp.pkg distribution.xml
+# productbuild --synthesize --package XiaoLi-tmp.pkg distribution.xml
 
 # Build the final package
-productbuild --distribution distribution.xml --package-path . azooKey-release.pkg
+productbuild --distribution distribution.xml --package-path . XiaoLi-release.pkg
 
 # Clean up
-rm azooKey-tmp.pkg
+rm XiaoLi-tmp.pkg
 
 # Sign Pkg
-productsign --sign "Developer ID Installer" ./azooKey-release.pkg ./azooKey-release-signed.pkg
-rm azooKey-release.pkg
+productsign --sign "Developer ID Installer" ./XiaoLi-release.pkg ./XiaoLi-release-signed.pkg
+rm XiaoLi-release.pkg
 
 # Submit for Notarization
 # For fork developers: You would need to update `--keychain--profile "Notarytool"` part, because this is environment-depenedent command.
-xcrun notarytool submit azooKey-release-signed.pkg --keychain-profile "Notarytool" --wait
+xcrun notarytool submit XiaoLi-release-signed.pkg --keychain-profile "Notarytool" --wait
 
 # Staple
-xcrun stapler staple azooKey-release-signed.pkg
+xcrun stapler staple XiaoLi-release-signed.pkg
