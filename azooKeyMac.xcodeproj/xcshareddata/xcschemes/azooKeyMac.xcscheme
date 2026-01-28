@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A41E61326E745D9009B65D7"
-               BuildableName = "azooKeyMac.app"
-               BlueprintName = "azooKeyMac"
+               BuildableName = "XiaoLiIME.app"
+               BlueprintName = "XiaoLiIME"
                ReferencedContainer = "container:azooKeyMac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A41E62326E745DD009B65D7"
-               BuildableName = "azooKeyMacTests.xctest"
-               BlueprintName = "azooKeyMacTests"
+               BuildableName = "XiaoLiIMEMacTests.xctest"
+               BlueprintName = "XiaoLiIMEMacTests"
                ReferencedContainer = "container:azooKeyMac.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,8 +45,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A41E62D26E745DD009B65D7"
-               BuildableName = "azooKeyMacUITests.xctest"
-               BlueprintName = "azooKeyMacUITests"
+               BuildableName = "XiaoLiIMEMacUITests.xctest"
+               BlueprintName = "XiaoLiIMEMacUITests"
                ReferencedContainer = "container:azooKeyMac.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -67,8 +67,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A41E61326E745D9009B65D7"
-            BuildableName = "azooKeyMac.app"
-            BlueprintName = "azooKeyMac"
+            BuildableName = "XiaoLiIME.app"
+            BlueprintName = "XiaoLiIME"
             ReferencedContainer = "container:azooKeyMac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -84,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A41E61326E745D9009B65D7"
-            BuildableName = "azooKeyMac.app"
-            BlueprintName = "azooKeyMac"
+            BuildableName = "XiaoLiIME.app"
+            BlueprintName = "XiaoLiIME"
             ReferencedContainer = "container:azooKeyMac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -2,6 +2,7 @@ set -ex
 
 PROJECT_NAME="azooKeyMac"
 SCHEME="azooKeyMac"
+APP_NAME="XiaoLiIME"
 CONFIGURATION="Release"
 ARCHIVE_PATH="./build/archive.xcarchive"
 EXPORT_PATH="./build/export"
@@ -34,8 +35,8 @@ xcodebuild -exportArchive \
   -allowProvisioningUpdates
 
 # 4. Notarize .app
-APP_PATH="${EXPORT_PATH}/${PROJECT_NAME}.app"
-APP_ZIP="${PROJECT_NAME}.zip"
+APP_PATH="${EXPORT_PATH}/${APP_NAME}.app"
+APP_ZIP="${APP_NAME}.zip"
 
 # Zip the .app for notarization
 ditto -c -k --sequesterRsrc --keepParent "${APP_PATH}" "${APP_ZIP}"
@@ -52,7 +53,7 @@ rm ${EXPORT_PATH}/Packaging.log
 rm ${EXPORT_PATH}/DistributionSummary.plist
 rm ${EXPORT_PATH}/ExportOptions.plist
 
-# Suppose we have build/azooKeyMac.app
+# Suppose we have build/XiaoLiIME.app
 # Use this script to create a plist package for distribution
 # pkgbuild --analyze --root ./build/ pkg.plist
 

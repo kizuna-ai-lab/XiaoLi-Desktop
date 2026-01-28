@@ -40,10 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A41E61426E745D9009B65D7 /* azooKeyMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = azooKeyMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41E61426E745D9009B65D7 /* XiaoLiIME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoLiIME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A41E61B26E745DD009B65D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1A41E62426E745DD009B65D7 /* azooKeyMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = azooKeyMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A41E62E26E745DD009B65D7 /* azooKeyMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = azooKeyMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41E62426E745DD009B65D7 /* XiaoLiIMEMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XiaoLiIMEMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41E62E26E745DD009B65D7 /* XiaoLiIMEMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XiaoLiIMEMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A41E64126E74627009B65D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A41E64526E7470D009B65D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A41E64626E74937009B65D7 /* main.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = main.tiff; path = azooKeyMac/main.tiff; sourceTree = SOURCE_ROOT; };
@@ -109,9 +109,9 @@
 		1A41E61526E745D9009B65D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A41E61426E745D9009B65D7 /* azooKeyMac.app */,
-				1A41E62426E745DD009B65D7 /* azooKeyMacTests.xctest */,
-				1A41E62E26E745DD009B65D7 /* azooKeyMacUITests.xctest */,
+				1A41E61426E745D9009B65D7 /* XiaoLiIME.app */,
+				1A41E62426E745DD009B65D7 /* XiaoLiIMEMacTests.xctest */,
+				1A41E62E26E745DD009B65D7 /* XiaoLiIMEMacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A41E61326E745D9009B65D7 /* azooKeyMac */ = {
+		1A41E61326E745D9009B65D7 /* XiaoLiIME */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A41E63826E745DD009B65D7 /* Build configuration list for PBXNativeTarget "azooKeyMac" */;
+			buildConfigurationList = 1A41E63826E745DD009B65D7 /* Build configuration list for PBXNativeTarget "XiaoLiIME" */;
 			buildPhases = (
 				1A41E61026E745D9009B65D7 /* Sources */,
 				1A41E61126E745D9009B65D7 /* Frameworks */,
@@ -171,17 +171,17 @@
 				55CE06E92CB01F130002DAF1 /* Windows */,
 				55CE06F52CB01F180002DAF1 /* Preview Content */,
 			);
-			name = azooKeyMac;
+			name = XiaoLiIME;
 			packageProductDependencies = (
 				554A265F2DB37657003C5CFB /* Core */,
 			);
 			productName = azooKeyMac;
-			productReference = 1A41E61426E745D9009B65D7 /* azooKeyMac.app */;
+			productReference = 1A41E61426E745D9009B65D7 /* XiaoLiIME.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1A41E62326E745DD009B65D7 /* azooKeyMacTests */ = {
+		1A41E62326E745DD009B65D7 /* XiaoLiIMEMacTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A41E63B26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "azooKeyMacTests" */;
+			buildConfigurationList = 1A41E63B26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "XiaoLiIMEMacTests" */;
 			buildPhases = (
 				1A41E62026E745DD009B65D7 /* Sources */,
 				1A41E62126E745DD009B65D7 /* Frameworks */,
@@ -195,14 +195,14 @@
 			fileSystemSynchronizedGroups = (
 				55CE06ED2CB01F160002DAF1 /* azooKeyMacTests */,
 			);
-			name = azooKeyMacTests;
+			name = XiaoLiIMEMacTests;
 			productName = azooKeyMacTests;
-			productReference = 1A41E62426E745DD009B65D7 /* azooKeyMacTests.xctest */;
+			productReference = 1A41E62426E745DD009B65D7 /* XiaoLiIMEMacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1A41E62D26E745DD009B65D7 /* azooKeyMacUITests */ = {
+		1A41E62D26E745DD009B65D7 /* XiaoLiIMEMacUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A41E63E26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "azooKeyMacUITests" */;
+			buildConfigurationList = 1A41E63E26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "XiaoLiIMEMacUITests" */;
 			buildPhases = (
 				1A41E62A26E745DD009B65D7 /* Sources */,
 				1A41E62B26E745DD009B65D7 /* Frameworks */,
@@ -216,9 +216,9 @@
 			fileSystemSynchronizedGroups = (
 				55CE06F12CB01F160002DAF1 /* azooKeyMacUITests */,
 			);
-			name = azooKeyMacUITests;
+			name = XiaoLiIMEMacUITests;
 			productName = azooKeyMacUITests;
-			productReference = 1A41E62E26E745DD009B65D7 /* azooKeyMacUITests.xctest */;
+			productReference = 1A41E62E26E745DD009B65D7 /* XiaoLiIMEMacUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -260,9 +260,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A41E61326E745D9009B65D7 /* azooKeyMac */,
-				1A41E62326E745DD009B65D7 /* azooKeyMacTests */,
-				1A41E62D26E745DD009B65D7 /* azooKeyMacUITests */,
+				1A41E61326E745D9009B65D7 /* XiaoLiIME */,
+				1A41E62326E745DD009B65D7 /* XiaoLiIMEMacTests */,
+				1A41E62D26E745DD009B65D7 /* XiaoLiIMEMacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -330,12 +330,12 @@
 /* Begin PBXTargetDependency section */
 		1A41E62626E745DD009B65D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1A41E61326E745D9009B65D7 /* azooKeyMac */;
+			target = 1A41E61326E745D9009B65D7 /* XiaoLiIME */;
 			targetProxy = 1A41E62526E745DD009B65D7 /* PBXContainerItemProxy */;
 		};
 		1A41E63026E745DD009B65D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1A41E61326E745D9009B65D7 /* azooKeyMac */;
+			target = 1A41E61326E745D9009B65D7 /* XiaoLiIME */;
 			targetProxy = 1A41E62F26E745DD009B65D7 /* PBXContainerItemProxy */;
 		};
 		554A26622DB3765F003C5CFB /* PBXTargetDependency */ = {
@@ -650,7 +650,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A41E63826E745DD009B65D7 /* Build configuration list for PBXNativeTarget "azooKeyMac" */ = {
+		1A41E63826E745DD009B65D7 /* Build configuration list for PBXNativeTarget "XiaoLiIME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A41E63926E745DD009B65D7 /* Debug */,
@@ -659,7 +659,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A41E63B26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "azooKeyMacTests" */ = {
+		1A41E63B26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "XiaoLiIMEMacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A41E63C26E745DD009B65D7 /* Debug */,
@@ -668,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A41E63E26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "azooKeyMacUITests" */ = {
+		1A41E63E26E745DD009B65D7 /* Build configuration list for PBXNativeTarget "XiaoLiIMEMacUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A41E63F26E745DD009B65D7 /* Debug */,
