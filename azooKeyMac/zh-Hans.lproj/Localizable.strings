@@ -1,0 +1,158 @@
+/*
+  Localizable.strings (Simplified Chinese)
+  XiaoLiIME
+*/
+
+// MARK: - Menu Items
+"menu.liveConversion" = "实时转换";
+"menu.settings" = "设置…";
+"menu.smartConversion" = "智能转换";
+"menu.smartConversion.disabled" = "智能转换（已禁用/无后端）";
+"menu.viewOnGitHub" = "在 GitHub 上查看…";
+
+// MARK: - Window Titles
+"window.settings" = "设置";
+
+// MARK: - Settings Tabs
+"tab.basic" = "基本";
+"tab.customize" = "自定义";
+"tab.advanced" = "高级设置";
+
+// MARK: - Basic Tab - Smart Conversion
+"settings.smartConversion" = "智能转换";
+"settings.smartConversion.off" = "关闭";
+"settings.apiKey" = "API 密钥";
+"settings.apiKey.placeholder" = "例：sk-xxxxxxxxxxx";
+"settings.apiKey.help" = "OpenAI API 密钥仅在本地管理，不会公开。使用 API 生成时会产生费用。";
+"settings.modelName" = "模型名称";
+"settings.modelName.placeholder" = "例：gpt-4o-mini";
+"settings.endpoint" = "端点";
+"settings.endpoint.placeholder" = "例：https://api.openai.com/v1/chat/completions";
+"settings.endpoint.help" = "例：https://api.openai.com/v1/chat/completions\nGemini：https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+"settings.connectionTest" = "连接测试";
+"settings.connectionSuccess" = "连接成功";
+
+// MARK: - Basic Tab - User Dictionary
+"settings.userDictionary" = "用户词典";
+"settings.userDictionary.xiaoli" = "XiaoLi 用户词典";
+"settings.userDictionary.system" = "系统用户词典";
+"settings.userDictionary.items" = "%d 个项目";
+"settings.userDictionary.lastUpdate" = "最后更新：%@ / %d 个项目";
+"settings.userDictionary.notSet" = "未设置";
+"settings.userDictionary.loadError" = "加载错误：%@";
+"settings.userDictionary.loadSuccess" = "加载成功 / %d 个项目";
+"settings.edit" = "编辑";
+"settings.load" = "加载";
+"settings.reset" = "重置";
+
+// MARK: - Basic Tab - Conversion
+"settings.conversion" = "转换设置";
+"settings.liveConversion.enable" = "启用实时转换";
+"settings.conversionProfile" = "转换配置";
+"settings.conversionProfile.placeholder" = "例：张三/高中生";
+"settings.conversionProfile.help" = "Zenzai 可以根据您的个人资料进行转换。\n输入您的姓名、职业、兴趣等，系统会自动推荐相应的转换。\n（这是实验性功能，准确性可能不足）";
+
+// MARK: - Customize Tab - Input Options
+"settings.inputOptions" = "输入选项";
+"settings.backslash" = "输入反斜杠代替日元符号";
+"settings.halfWidthSpace" = "始终输入半角空格";
+"settings.punctuation" = "标点符号类型";
+"settings.punctuation.kutenToten" = "、和。";
+"settings.punctuation.periodToten" = "、和．";
+"settings.punctuation.kutenComma" = "，和。";
+"settings.punctuation.periodComma" = "，和．";
+
+// MARK: - Customize Tab - Learning
+"settings.learning" = "学习";
+"settings.learning.history" = "历史学习";
+"settings.learning.inputAndOutput" = "学习";
+"settings.learning.onlyOutput" = "停止学习";
+"settings.learning.nothing" = "忽略学习";
+"settings.learning.data" = "历史学习数据";
+"settings.learning.resetSuccess" = "已重置历史学习数据";
+"settings.learning.resetConfirm" = "确定要重置历史学习数据吗？";
+"settings.cancel" = "取消";
+
+// MARK: - Customize Tab - Input Style
+"settings.inputStyle" = "输入方式";
+"settings.inputStyle.default" = "默认";
+"settings.inputStyle.kanaJIS" = "假名输入（JIS）";
+"settings.inputStyle.kanaUS" = "假名输入（US）";
+"settings.inputStyle.custom" = "自定义";
+"settings.inputStyle.customTable" = "自定义输入表";
+
+// MARK: - Customize Tab - Keyboard Layout
+"settings.keyboardLayout" = "键盘布局";
+
+// MARK: - Advanced Tab - Zenzai
+"settings.zenzai" = "Zenzai 设置";
+"settings.zenzai.inferenceLimit" = "Zenzai 推理上限";
+"settings.zenzai.inferenceLimit.help" = "减小推理上限可以改善输入时的卡顿。";
+
+// MARK: - Advanced Tab - Developer
+"settings.developer" = "开发者设置";
+"settings.developer.debugWindow" = "启用调试窗口";
+"settings.developer.predictiveTyping" = "启用开发中的预测输入";
+"settings.personalization" = "个性化";
+"settings.personalization.off" = "关闭";
+"settings.personalization.soft" = "弱";
+"settings.personalization.normal" = "普通";
+"settings.personalization.hard" = "强";
+
+// MARK: - Advanced Tab - App Info
+"settings.appInfo" = "应用信息";
+
+// MARK: - User Dictionary Editor
+"userDict.title" = "用户词典设置";
+"userDict.beta" = "此功能为测试版。规格可能会更改，且最多限制 50 个条目。";
+"userDict.word" = "词语";
+"userDict.reading" = "读音";
+"userDict.hint" = "提示";
+"userDict.done" = "完成";
+"userDict.add" = "添加";
+"userDict.limitExceeded" = "已超过 50 个条目";
+"userDict.undo" = "撤销";
+"userDict.editButton" = "编辑";
+"userDict.deleteButton" = "删除";
+
+// MARK: - Romaji Table Editor
+"romajiTable.title" = "自定义输入表";
+"romajiTable.selectBase" = "选择基础输入表";
+"romajiTable.addMapping" = "添加新映射";
+"romajiTable.romajiPlaceholder" = "罗马字（例：ca）";
+"romajiTable.hiraganaPlaceholder" = "平假名（例：か）";
+"romajiTable.currentMappings" = "当前映射";
+"romajiTable.mappingCount" = "映射数量：%d";
+"romajiTable.filter" = "筛选...";
+"romajiTable.empty" = "映射为空。请加载基础映射或从文件导入。";
+"romajiTable.loadBase" = "加载基础映射";
+"romajiTable.loadFromFile" = "从文件加载";
+"romajiTable.delete" = "删除";
+"romajiTable.save" = "保存";
+"romajiTable.other" = "其他";
+"romajiTable.resetToDefault" = "恢复默认";
+"romajiTable.clearAll" = "全部清除";
+"romajiTable.exportToFile" = "导出到文件";
+"romajiTable.keyRequired" = "键值为必填项。";
+"romajiTable.selectTSV" = "选择 TSV 文件";
+"romajiTable.noValidMappings" = "未找到有效映射。";
+"romajiTable.loadFailed" = "加载失败：%@";
+"romajiTable.exportFailed" = "导出失败：%@";
+
+// MARK: - Errors
+"error.prefix" = "错误";
+"error.invalidURL" = "错误：无效的 URL 格式";
+"error.noResponse" = "错误：服务器无响应";
+"error.parseFailed" = "错误：响应解析失败 - %@";
+"error.unexpectedFormat" = "错误：意外的响应格式";
+"error.invalidAPIKey" = "错误：API 密钥无效";
+"error.accessDenied" = "错误：访问被拒绝";
+"error.endpointNotFound" = "错误：端点未找到";
+"error.rateLimit" = "错误：已达到速率限制";
+"error.serverError" = "错误：服务器错误（代码：%d）";
+"error.httpStatus" = "错误：HTTP 状态 %d\n详情：%@...";
+"error.conversionFailed" = "转换失败";
+"error.learningResetFailed" = "重置学习数据失败";
+
+// MARK: - Common
+"common.help" = "帮助";

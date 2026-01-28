@@ -7,15 +7,15 @@ extension XiaoLiInputController {
 
     func setupMenu() {
         self.appMenu.autoenablesItems = true
-        self.liveConversionToggleMenuItem = NSMenuItem(title: "ライブ変換", action: #selector(self.toggleLiveConversion(_:)), keyEquivalent: "")
+        self.liveConversionToggleMenuItem = NSMenuItem(title: NSLocalizedString("menu.liveConversion", comment: "Live conversion menu item"), action: #selector(self.toggleLiveConversion(_:)), keyEquivalent: "")
         self.appMenu.addItem(self.liveConversionToggleMenuItem)
         self.transformSelectedTextMenuItem = NSMenuItem(title: TransformMenuTitle.normal, action: #selector(self.performTransformSelectedText(_:)), keyEquivalent: "s")
         self.transformSelectedTextMenuItem.keyEquivalentModifierMask = [.control]
         self.transformSelectedTextMenuItem.target = self
         self.appMenu.addItem(self.transformSelectedTextMenuItem)
         self.appMenu.addItem(NSMenuItem.separator())
-        self.appMenu.addItem(NSMenuItem(title: "設定…", action: #selector(self.openConfigWindow(_:)), keyEquivalent: ""))
-        self.appMenu.addItem(NSMenuItem(title: "View on GitHub…", action: #selector(self.openGitHubRepository(_:)), keyEquivalent: ""))
+        self.appMenu.addItem(NSMenuItem(title: NSLocalizedString("menu.settings", comment: "Settings menu item"), action: #selector(self.openConfigWindow(_:)), keyEquivalent: ""))
+        self.appMenu.addItem(NSMenuItem(title: NSLocalizedString("menu.viewOnGitHub", comment: "View on GitHub menu item"), action: #selector(self.openGitHubRepository(_:)), keyEquivalent: ""))
         self.updateTransformSelectedTextMenuItemEnabledState()
     }
 
@@ -28,12 +28,12 @@ extension XiaoLiInputController {
 
     func updateLiveConversionToggleMenuItem(newValue: Bool) {
         self.liveConversionToggleMenuItem.state = newValue ? .on : .off
-        self.liveConversionToggleMenuItem.title = "ライブ変換"
+        self.liveConversionToggleMenuItem.title = NSLocalizedString("menu.liveConversion", comment: "Live conversion menu item")
     }
 
     private enum TransformMenuTitle {
-        static let normal = "いい感じ変換"
-        static let noBackend = "いい感じ変換（無効/バックエンドなし）"
+        static var normal: String { NSLocalizedString("menu.smartConversion", comment: "Smart conversion menu item") }
+        static var noBackend: String { NSLocalizedString("menu.smartConversion.disabled", comment: "Smart conversion disabled menu item") }
     }
 
     @MainActor @objc func performTransformSelectedText(_ sender: Any) {

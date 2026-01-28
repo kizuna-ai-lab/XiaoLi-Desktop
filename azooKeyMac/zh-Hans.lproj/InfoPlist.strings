@@ -1,0 +1,9 @@
+/*
+  InfoPlist.strings (Simplified Chinese)
+  XiaoLiIME
+*/
+
+CFBundleName = "小李输入法";
+
+com.apple.inputmethod.Roman = "小李（英语）";
+com.apple.inputmethod.Japanese = "小李（日语）";

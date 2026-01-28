@@ -1,0 +1,158 @@
+/*
+  Localizable.strings (English)
+  XiaoLiIME
+*/
+
+// MARK: - Menu Items
+"menu.liveConversion" = "Live Conversion";
+"menu.settings" = "Settings…";
+"menu.smartConversion" = "Smart Conversion";
+"menu.smartConversion.disabled" = "Smart Conversion (Disabled/No Backend)";
+"menu.viewOnGitHub" = "View on GitHub…";
+
+// MARK: - Window Titles
+"window.settings" = "Settings";
+
+// MARK: - Settings Tabs
+"tab.basic" = "Basic";
+"tab.customize" = "Customize";
+"tab.advanced" = "Advanced";
+
+// MARK: - Basic Tab - Smart Conversion
+"settings.smartConversion" = "Smart Conversion";
+"settings.smartConversion.off" = "Off";
+"settings.apiKey" = "API Key";
+"settings.apiKey.placeholder" = "e.g. sk-xxxxxxxxxxx";
+"settings.apiKey.help" = "The OpenAI API key is managed locally and will not be shared externally. API usage will incur charges.";
+"settings.modelName" = "Model Name";
+"settings.modelName.placeholder" = "e.g. gpt-4o-mini";
+"settings.endpoint" = "Endpoint";
+"settings.endpoint.placeholder" = "e.g. https://api.openai.com/v1/chat/completions";
+"settings.endpoint.help" = "e.g. https://api.openai.com/v1/chat/completions\nGemini: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+"settings.connectionTest" = "Test Connection";
+"settings.connectionSuccess" = "Connection Successful";
+
+// MARK: - Basic Tab - User Dictionary
+"settings.userDictionary" = "User Dictionary";
+"settings.userDictionary.xiaoli" = "XiaoLi User Dictionary";
+"settings.userDictionary.system" = "System User Dictionary";
+"settings.userDictionary.items" = "%d items";
+"settings.userDictionary.lastUpdate" = "Last update: %@ / %d items";
+"settings.userDictionary.notSet" = "Not set";
+"settings.userDictionary.loadError" = "Load error: %@";
+"settings.userDictionary.loadSuccess" = "Loaded successfully / %d items";
+"settings.edit" = "Edit";
+"settings.load" = "Load";
+"settings.reset" = "Reset";
+
+// MARK: - Basic Tab - Conversion
+"settings.conversion" = "Conversion Settings";
+"settings.liveConversion.enable" = "Enable Live Conversion";
+"settings.conversionProfile" = "Conversion Profile";
+"settings.conversionProfile.placeholder" = "e.g. John Smith/Student";
+"settings.conversionProfile.help" = "Zenzai can convert considering your profile.\nEnter your name, occupation, hobbies, etc. to get personalized conversion recommendations.\n(This is an experimental feature and may not be fully accurate)";
+
+// MARK: - Customize Tab - Input Options
+"settings.inputOptions" = "Input Options";
+"settings.backslash" = "Type backslash instead of yen sign";
+"settings.halfWidthSpace" = "Always use half-width space";
+"settings.punctuation" = "Punctuation Style";
+"settings.punctuation.kutenToten" = "、and 。";
+"settings.punctuation.periodToten" = "、and ．";
+"settings.punctuation.kutenComma" = "，and 。";
+"settings.punctuation.periodComma" = "，and ．";
+
+// MARK: - Customize Tab - Learning
+"settings.learning" = "Learning";
+"settings.learning.history" = "History Learning";
+"settings.learning.inputAndOutput" = "Learn";
+"settings.learning.onlyOutput" = "Stop Learning";
+"settings.learning.nothing" = "Ignore Learning";
+"settings.learning.data" = "Learning History Data";
+"settings.learning.resetSuccess" = "Learning history data has been reset";
+"settings.learning.resetConfirm" = "Reset learning history data?";
+"settings.cancel" = "Cancel";
+
+// MARK: - Customize Tab - Input Style
+"settings.inputStyle" = "Input Style";
+"settings.inputStyle.default" = "Default";
+"settings.inputStyle.kanaJIS" = "Kana Input (JIS)";
+"settings.inputStyle.kanaUS" = "Kana Input (US)";
+"settings.inputStyle.custom" = "Custom";
+"settings.inputStyle.customTable" = "Custom Input Table";
+
+// MARK: - Customize Tab - Keyboard Layout
+"settings.keyboardLayout" = "Keyboard Layout";
+
+// MARK: - Advanced Tab - Zenzai
+"settings.zenzai" = "Zenzai Settings";
+"settings.zenzai.inferenceLimit" = "Zenzai Inference Limit";
+"settings.zenzai.inferenceLimit.help" = "Reducing the inference limit may improve typing responsiveness.";
+
+// MARK: - Advanced Tab - Developer
+"settings.developer" = "Developer Settings";
+"settings.developer.debugWindow" = "Enable Debug Window";
+"settings.developer.predictiveTyping" = "Enable Experimental Predictive Typing";
+"settings.personalization" = "Personalization";
+"settings.personalization.off" = "Off";
+"settings.personalization.soft" = "Soft";
+"settings.personalization.normal" = "Normal";
+"settings.personalization.hard" = "Strong";
+
+// MARK: - Advanced Tab - App Info
+"settings.appInfo" = "App Info";
+
+// MARK: - User Dictionary Editor
+"userDict.title" = "User Dictionary Settings";
+"userDict.beta" = "This feature is in beta. Specifications may change without notice, and is limited to 50 entries.";
+"userDict.word" = "Word";
+"userDict.reading" = "Reading";
+"userDict.hint" = "Hint";
+"userDict.done" = "Done";
+"userDict.add" = "Add";
+"userDict.limitExceeded" = "Exceeded 50 entries";
+"userDict.undo" = "Undo";
+"userDict.editButton" = "Edit";
+"userDict.deleteButton" = "Delete";
+
+// MARK: - Romaji Table Editor
+"romajiTable.title" = "Custom Input Table";
+"romajiTable.selectBase" = "Select Base Input Table";
+"romajiTable.addMapping" = "Add New Mapping";
+"romajiTable.romajiPlaceholder" = "Romaji (e.g. ca)";
+"romajiTable.hiraganaPlaceholder" = "Hiragana (e.g. か)";
+"romajiTable.currentMappings" = "Current Mappings";
+"romajiTable.mappingCount" = "Mappings: %d";
+"romajiTable.filter" = "Filter...";
+"romajiTable.empty" = "Mappings are empty. Load a base or import from file.";
+"romajiTable.loadBase" = "Load Base";
+"romajiTable.loadFromFile" = "Load from File";
+"romajiTable.delete" = "Delete";
+"romajiTable.save" = "Save";
+"romajiTable.other" = "Other";
+"romajiTable.resetToDefault" = "Reset to Default";
+"romajiTable.clearAll" = "Clear All";
+"romajiTable.exportToFile" = "Export to File";
+"romajiTable.keyRequired" = "Key is required.";
+"romajiTable.selectTSV" = "Select TSV File";
+"romajiTable.noValidMappings" = "No valid mappings found.";
+"romajiTable.loadFailed" = "Load failed: %@";
+"romajiTable.exportFailed" = "Export failed: %@";
+
+// MARK: - Errors
+"error.prefix" = "Error";
+"error.invalidURL" = "Error: Invalid URL format";
+"error.noResponse" = "Error: No response from server";
+"error.parseFailed" = "Error: Response parse failed - %@";
+"error.unexpectedFormat" = "Error: Unexpected response format";
+"error.invalidAPIKey" = "Error: Invalid API key";
+"error.accessDenied" = "Error: Access denied";
+"error.endpointNotFound" = "Error: Endpoint not found";
+"error.rateLimit" = "Error: Rate limit reached";
+"error.serverError" = "Error: Server error (code: %d)";
+"error.httpStatus" = "Error: HTTP status %d\nDetails: %@...";
+"error.conversionFailed" = "Conversion failed";
+"error.learningResetFailed" = "Failed to reset learning data";
+
+// MARK: - Common
+"common.help" = "Help";

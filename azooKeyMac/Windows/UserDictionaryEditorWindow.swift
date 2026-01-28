@@ -18,7 +18,7 @@ struct UserDictionaryEditorWindow: View {
     @ViewBuilder
     private func helpButton(helpContent: LocalizedStringKey, isPresented: Binding<Bool>) -> some View {
         if #available(macOS 14, *) {
-            Button("ヘルプ", systemImage: "questionmark") {
+            Button("common.help", systemImage: "questionmark") {
                 isPresented.wrappedValue = true
             }
             .labelStyle(.iconOnly)
@@ -35,10 +35,10 @@ struct UserDictionaryEditorWindow: View {
 
     var body: some View {
         VStack {
-            Text("ユーザ辞書の設定")
+            Text("userDict.title")
                 .bold()
                 .font(.title)
-            Text("この機能はβ版です。予告なく仕様を変更することがあるほか、最大50件に限定しています。")
+            Text("userDict.beta")
                 .font(.caption)
             Spacer()
             if let editTargetID {
@@ -57,12 +57,12 @@ struct UserDictionaryEditorWindow: View {
                     }
                 )
                 Form {
-                    TextField("単語", text: itemBinding.word)
-                    TextField("読み", text: itemBinding.reading)
-                    TextField("ヒント", text: itemBinding.nonNullHint)
+                    TextField("userDict.word", text: itemBinding.word)
+                    TextField("userDict.reading", text: itemBinding.reading)
+                    TextField("userDict.hint", text: itemBinding.nonNullHint)
                     HStack {
                         Spacer()
-                        Button("完了", systemImage: "checkmark") {
+                        Button("userDict.done", systemImage: "checkmark") {
                             self.editTargetID = nil
                         }
                         Spacer()
@@ -71,7 +71,7 @@ struct UserDictionaryEditorWindow: View {
             } else {
                 HStack {
                     Spacer()
-                    Button("追加", systemImage: "plus") {
+                    Button("userDict.add", systemImage: "plus") {
                         let newItem = Config.UserDictionaryEntry(word: "", reading: "", hint: nil)
                         self.userDictionary.value.items.append(newItem)
                         self.editTargetID = newItem.id
@@ -79,11 +79,11 @@ struct UserDictionaryEditorWindow: View {
                     }
                     .disabled(self.isAdditionDisabled)
                     if self.isAdditionDisabled {
-                        Label("50件を超えています", systemImage: "exclamationmark.octagon")
+                        Label("userDict.limitExceeded", systemImage: "exclamationmark.octagon")
                             .foregroundStyle(.red)
                     }
                     if let undoItem {
-                        Button("元に戻す", systemImage: "arrow.uturn.backward") {
+                        Button("userDict.undo", systemImage: "arrow.uturn.backward") {
                             self.userDictionary.value.items.append(undoItem)
                             self.undoItem = nil
                         }
@@ -96,13 +96,13 @@ struct UserDictionaryEditorWindow: View {
                 Table(self.userDictionary.value.items) {
                     TableColumn("") { item in
                         HStack {
-                            Button("編集する", systemImage: "pencil") {
+                            Button("userDict.editButton", systemImage: "pencil") {
                                 self.editTargetID = item.id
                                 self.undoItem = nil
                             }
                             .buttonStyle(.bordered)
                             .labelStyle(.iconOnly)
-                            Button("削除する", systemImage: "trash", role: .destructive) {
+                            Button("userDict.deleteButton", systemImage: "trash", role: .destructive) {
                                 if let itemIndex = self.userDictionary.value.items.firstIndex(where: {
                                     $0.id == item.id
                                 }) {
@@ -114,9 +114,9 @@ struct UserDictionaryEditorWindow: View {
                             .labelStyle(.iconOnly)
                         }
                     }
-                    TableColumn("単語", value: \.word)
-                    TableColumn("読み", value: \.reading)
-                    TableColumn("ヒント", value: \.nonNullHint)
+                    TableColumn("userDict.word", value: \.word)
+                    TableColumn("userDict.reading", value: \.reading)
+                    TableColumn("userDict.hint", value: \.nonNullHint)
                 }
                 .disabled(editTargetID != nil)
                 Spacer()

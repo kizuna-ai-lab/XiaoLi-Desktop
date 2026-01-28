@@ -82,7 +82,7 @@ struct RomajiTableEditorWindow: View {
         .sheet(isPresented: $showingBasePicker) {
             basePickerView
         }
-        .alert("エラー", isPresented: $showingAlert) {
+        .alert("error.prefix", isPresented: $showingAlert) {
             Button("OK") {}
         } message: {
             Text(alertMessage)
@@ -97,10 +97,10 @@ struct RomajiTableEditorWindow: View {
 
         var title: String {
             switch self {
-            case .default: "デフォルト"
-            case .kanaJIS: "かな入力（JIS）"
-            case .kanaUS: "かな入力（US）"
-            case .azik: "AZIK"
+            case .default: return NSLocalizedString("settings.inputStyle.default", comment: "Default")
+            case .kanaJIS: return NSLocalizedString("settings.inputStyle.kanaJIS", comment: "Kana JIS")
+            case .kanaUS: return NSLocalizedString("settings.inputStyle.kanaUS", comment: "Kana US")
+            case .azik: return "AZIK"
             }
         }
     }
@@ -108,7 +108,7 @@ struct RomajiTableEditorWindow: View {
     @ViewBuilder
     private var basePickerView: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("ベースとなる入力テーブルを選択")
+            Text("romajiTable.selectBase")
                 .font(.headline)
             ForEach(BasePreset.allCases, id: \.self) { preset in
                 Button(preset.title) {
@@ -118,7 +118,7 @@ struct RomajiTableEditorWindow: View {
             }
             HStack {
                 Spacer()
-                Button("キャンセル", role: .cancel) {
+                Button("settings.cancel", role: .cancel) {
                     showingBasePicker = false
                 }
             }
@@ -129,7 +129,7 @@ struct RomajiTableEditorWindow: View {
 
     @ViewBuilder
     private var headerView: some View {
-        Text("カスタム入力テーブル")
+        Text("romajiTable.title")
             .font(.title)
             .bold()
     }
@@ -137,24 +137,24 @@ struct RomajiTableEditorWindow: View {
     @ViewBuilder
     private var mappingInputView: some View {
         VStack(alignment: .leading) {
-            Text("新しいマッピングを追加")
+            Text("romajiTable.addMapping")
                 .font(.headline)
 
             HStack {
-                TextField("ローマ字（例：ca）", text: $newKey)
+                TextField("romajiTable.romajiPlaceholder", text: $newKey)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 150)
 
                 Image(systemName: "arrow.forward")
 
-                TextField("ひらがな（例：か）", text: $newValue)
+                TextField("romajiTable.hiraganaPlaceholder", text: $newValue)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 150)
                     .onSubmit {
                         self.addMapping()
                     }
 
-                Button("追加") {
+                Button("userDict.add") {
                     self.addMapping()
                 }
                 .disabled(newKey.isEmpty)
@@ -167,10 +167,10 @@ struct RomajiTableEditorWindow: View {
     @ViewBuilder
     private var searchView: some View {
         HStack {
-            TextField("フィルター...", text: $searchText)
+            TextField("romajiTable.filter", text: $searchText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
-            Text("マッピング数: \(mappings.count)")
+            Text(String(format: NSLocalizedString("romajiTable.mappingCount", comment: "Mapping count"), mappings.count))
                 .foregroundColor(.secondary)
         }
     }
@@ -178,18 +178,18 @@ struct RomajiTableEditorWindow: View {
     @ViewBuilder
     private var mappingListView: some View {
         VStack(alignment: .leading) {
-            Text("現在のマッピング")
+            Text("romajiTable.currentMappings")
                 .font(.headline)
 
             if mappings.isEmpty {
                 VStack(spacing: 12) {
-                    Text("マッピングが空です。ベースを読み込むかファイルから読み込んでください。")
+                    Text("romajiTable.empty")
                         .foregroundColor(.secondary)
                     HStack {
-                        Button("ベースを読み込む") {
+                        Button("romajiTable.loadBase") {
                             showingBasePicker = true
                         }
-                        Button("ファイルから読み込む") {
+                        Button("romajiTable.loadFromFile") {
                             importFromFile()
                         }
                     }
@@ -227,7 +227,7 @@ struct RomajiTableEditorWindow: View {
                 .frame(width: 200, alignment: .leading)
 
             Spacer()
-            Button("削除", systemImage: "xmark.circle", role: .destructive) {
+            Button("romajiTable.delete", systemImage: "xmark.circle", role: .destructive) {
                 removeMapping(mapping)
             }
             .buttonStyle(.borderless)
@@ -243,31 +243,31 @@ struct RomajiTableEditorWindow: View {
     @ViewBuilder
     private var footerView: some View {
         HStack {
-            Button("キャンセル", role: .cancel) {
+            Button("settings.cancel", role: .cancel) {
                 dismiss()
             }
 
             Spacer()
 
-            Button("保存") {
+            Button("romajiTable.save") {
                 saveChanges()
                 dismiss()
             }
             .buttonStyle(.borderedProminent)
-            Button("その他", systemImage: "ellipsis") {
+            Button("romajiTable.other", systemImage: "ellipsis") {
                 self.showComplexFunctionalityPopover = true
             }
             .labelStyle(.iconOnly)
             .popover(isPresented: $showComplexFunctionalityPopover) {
                 VStack(alignment: .leading) {
-                    Button("初期値に戻す", role: .destructive) {
+                    Button("romajiTable.resetToDefault", role: .destructive) {
                         loadMappings()
                     }
-                    Button("すべてクリア", role: .destructive) {
+                    Button("romajiTable.clearAll", role: .destructive) {
                         clearAllMappings()
                     }
                     Divider()
-                    Button("ファイルに書き出し") {
+                    Button("romajiTable.exportToFile") {
                         exportToFile()
                     }
                 }
@@ -280,7 +280,7 @@ struct RomajiTableEditorWindow: View {
         let trimmedKey = newKey.trimmingCharacters(in: .whitespacesAndNewlines)
         let trimmedValue = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedKey.isEmpty else {
-            self.alertMessage = "キーは必須です。"
+            self.alertMessage = NSLocalizedString("romajiTable.keyRequired", comment: "Key is required")
             self.showingAlert = true
             return
         }
@@ -355,7 +355,7 @@ struct RomajiTableEditorWindow: View {
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
         panel.canChooseFiles = true
-        panel.title = "TSVファイルを選択"
+        panel.title = NSLocalizedString("romajiTable.selectTSV", comment: "Select TSV file")
 
         let handler: (NSApplication.ModalResponse) -> Void = { response in
             guard response == .OK, let url = panel.url else {
@@ -365,12 +365,12 @@ struct RomajiTableEditorWindow: View {
                 let text = try String(contentsOf: url, encoding: .utf8)
                 let parsed = Self.parse(exported: text)
                 if parsed.isEmpty {
-                    showAlert("有効なマッピングが見つかりませんでした。")
+                    showAlert(NSLocalizedString("romajiTable.noValidMappings", comment: "No valid mappings found"))
                     return
                 }
                 self.mappings = parsed
             } catch {
-                showAlert("読み込みに失敗しました: \(error.localizedDescription)")
+                showAlert(String(format: NSLocalizedString("romajiTable.loadFailed", comment: "Load failed"), error.localizedDescription))
             }
         }
 
@@ -387,7 +387,7 @@ struct RomajiTableEditorWindow: View {
             let url = try CustomInputTableStore.save(exported: exported)
             NSWorkspace.shared.activateFileViewerSelecting([url])
         } catch {
-            showAlert("書き出しに失敗しました: \(error.localizedDescription)")
+            showAlert(String(format: NSLocalizedString("romajiTable.exportFailed", comment: "Export failed"), error.localizedDescription))
         }
     }
 }

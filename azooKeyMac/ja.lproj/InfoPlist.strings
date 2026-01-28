@@ -1,0 +1,9 @@
+/*
+  InfoPlist.strings (Japanese)
+  XiaoLiIME
+*/
+
+CFBundleName = "XiaoLi";
+
+com.apple.inputmethod.Roman = "XiaoLi (英語)";
+com.apple.inputmethod.Japanese = "XiaoLi (日本語)";

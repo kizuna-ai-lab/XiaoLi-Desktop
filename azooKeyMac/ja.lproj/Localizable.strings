@@ -1,0 +1,158 @@
+/*
+  Localizable.strings (Japanese)
+  XiaoLiIME
+*/
+
+// MARK: - Menu Items
+"menu.liveConversion" = "ライブ変換";
+"menu.settings" = "設定…";
+"menu.smartConversion" = "いい感じ変換";
+"menu.smartConversion.disabled" = "いい感じ変換（無効/バックエンドなし）";
+"menu.viewOnGitHub" = "View on GitHub…";
+
+// MARK: - Window Titles
+"window.settings" = "設定";
+
+// MARK: - Settings Tabs
+"tab.basic" = "基本";
+"tab.customize" = "カスタマイズ";
+"tab.advanced" = "詳細設定";
+
+// MARK: - Basic Tab - Smart Conversion
+"settings.smartConversion" = "いい感じ変換";
+"settings.smartConversion.off" = "オフ";
+"settings.apiKey" = "APIキー";
+"settings.apiKey.placeholder" = "例:sk-xxxxxxxxxxx";
+"settings.apiKey.help" = "OpenAI APIキーはローカルのみで管理され、外部に公開されることはありません。生成の際にAPIを利用するため、課金が発生します。";
+"settings.modelName" = "モデル名";
+"settings.modelName.placeholder" = "例: gpt-4o-mini";
+"settings.endpoint" = "エンドポイント";
+"settings.endpoint.placeholder" = "例: https://api.openai.com/v1/chat/completions";
+"settings.endpoint.help" = "例: https://api.openai.com/v1/chat/completions\nGemini: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+"settings.connectionTest" = "接続テスト";
+"settings.connectionSuccess" = "接続成功";
+
+// MARK: - Basic Tab - User Dictionary
+"settings.userDictionary" = "ユーザ辞書";
+"settings.userDictionary.xiaoli" = "XiaoLiユーザ辞書";
+"settings.userDictionary.system" = "システムのユーザ辞書";
+"settings.userDictionary.items" = "%d件のアイテム";
+"settings.userDictionary.lastUpdate" = "最終更新: %@ / %d件のアイテム";
+"settings.userDictionary.notSet" = "未設定";
+"settings.userDictionary.loadError" = "読み込みエラー: %@";
+"settings.userDictionary.loadSuccess" = "読み込みに成功しました / %d件のアイテム";
+"settings.edit" = "編集";
+"settings.load" = "読み込む";
+"settings.reset" = "リセット";
+
+// MARK: - Basic Tab - Conversion
+"settings.conversion" = "変換設定";
+"settings.liveConversion.enable" = "ライブ変換を有効化";
+"settings.conversionProfile" = "変換プロフィール";
+"settings.conversionProfile.placeholder" = "例：田中太郎/高校生";
+"settings.conversionProfile.help" = "Zenzaiはあなたのプロフィールを考慮した変換を行うことができます。\n名前や仕事、趣味などを入力すると、それに合わせた変換が自動で推薦されます。\n（実験的な機能のため、精度が不十分な場合があります）";
+
+// MARK: - Customize Tab - Input Options
+"settings.inputOptions" = "入力オプション";
+"settings.backslash" = "円記号の代わりにバックスラッシュを入力";
+"settings.halfWidthSpace" = "スペースは常に半角を入力";
+"settings.punctuation" = "句読点の種類";
+"settings.punctuation.kutenToten" = "、と。";
+"settings.punctuation.periodToten" = "、と．";
+"settings.punctuation.kutenComma" = "，と。";
+"settings.punctuation.periodComma" = "，と．";
+
+// MARK: - Customize Tab - Learning
+"settings.learning" = "学習";
+"settings.learning.history" = "履歴学習";
+"settings.learning.inputAndOutput" = "学習する";
+"settings.learning.onlyOutput" = "学習を停止";
+"settings.learning.nothing" = "学習を無視";
+"settings.learning.data" = "履歴学習データ";
+"settings.learning.resetSuccess" = "履歴学習データをリセットしました";
+"settings.learning.resetConfirm" = "履歴学習データをリセットしますか？";
+"settings.cancel" = "キャンセル";
+
+// MARK: - Customize Tab - Input Style
+"settings.inputStyle" = "入力方式";
+"settings.inputStyle.default" = "デフォルト";
+"settings.inputStyle.kanaJIS" = "かな入力（JIS）";
+"settings.inputStyle.kanaUS" = "かな入力（US）";
+"settings.inputStyle.custom" = "カスタム";
+"settings.inputStyle.customTable" = "カスタム入力テーブル";
+
+// MARK: - Customize Tab - Keyboard Layout
+"settings.keyboardLayout" = "キーボード配列";
+
+// MARK: - Advanced Tab - Zenzai
+"settings.zenzai" = "Zenzai設定";
+"settings.zenzai.inferenceLimit" = "Zenzaiの推論上限";
+"settings.zenzai.inferenceLimit.help" = "推論上限を小さくすると、入力中のもたつきが改善されることがあります。";
+
+// MARK: - Advanced Tab - Developer
+"settings.developer" = "開発者向け設定";
+"settings.developer.debugWindow" = "デバッグウィンドウを有効化";
+"settings.developer.predictiveTyping" = "開発中の予測入力を有効化";
+"settings.personalization" = "パーソナライズ";
+"settings.personalization.off" = "オフ";
+"settings.personalization.soft" = "弱く";
+"settings.personalization.normal" = "普通";
+"settings.personalization.hard" = "強く";
+
+// MARK: - Advanced Tab - App Info
+"settings.appInfo" = "アプリ情報";
+
+// MARK: - User Dictionary Editor
+"userDict.title" = "ユーザ辞書の設定";
+"userDict.beta" = "この機能はβ版です。予告なく仕様を変更することがあるほか、最大50件に限定しています。";
+"userDict.word" = "単語";
+"userDict.reading" = "読み";
+"userDict.hint" = "ヒント";
+"userDict.done" = "完了";
+"userDict.add" = "追加";
+"userDict.limitExceeded" = "50件を超えています";
+"userDict.undo" = "元に戻す";
+"userDict.editButton" = "編集する";
+"userDict.deleteButton" = "削除する";
+
+// MARK: - Romaji Table Editor
+"romajiTable.title" = "カスタム入力テーブル";
+"romajiTable.selectBase" = "ベースとなる入力テーブルを選択";
+"romajiTable.addMapping" = "新しいマッピングを追加";
+"romajiTable.romajiPlaceholder" = "ローマ字（例：ca）";
+"romajiTable.hiraganaPlaceholder" = "ひらがな（例：か）";
+"romajiTable.currentMappings" = "現在のマッピング";
+"romajiTable.mappingCount" = "マッピング数: %d";
+"romajiTable.filter" = "フィルター...";
+"romajiTable.empty" = "マッピングが空です。ベースを読み込むかファイルから読み込んでください。";
+"romajiTable.loadBase" = "ベースを読み込む";
+"romajiTable.loadFromFile" = "ファイルから読み込む";
+"romajiTable.delete" = "削除";
+"romajiTable.save" = "保存";
+"romajiTable.other" = "その他";
+"romajiTable.resetToDefault" = "初期値に戻す";
+"romajiTable.clearAll" = "すべてクリア";
+"romajiTable.exportToFile" = "ファイルに書き出し";
+"romajiTable.keyRequired" = "キーは必須です。";
+"romajiTable.selectTSV" = "TSVファイルを選択";
+"romajiTable.noValidMappings" = "有効なマッピングが見つかりませんでした。";
+"romajiTable.loadFailed" = "読み込みに失敗しました: %@";
+"romajiTable.exportFailed" = "書き出しに失敗しました: %@";
+
+// MARK: - Errors
+"error.prefix" = "エラー";
+"error.invalidURL" = "エラー: 無効なURL形式です";
+"error.noResponse" = "エラー: サーバーから応答がありません";
+"error.parseFailed" = "エラー: レスポンス解析失敗 - %@";
+"error.unexpectedFormat" = "エラー: 予期しないレスポンス形式";
+"error.invalidAPIKey" = "エラー: APIキーが無効です";
+"error.accessDenied" = "エラー: アクセスが拒否されました";
+"error.endpointNotFound" = "エラー: エンドポイントが見つかりません";
+"error.rateLimit" = "エラー: レート制限に達しました";
+"error.serverError" = "エラー: サーバーエラー (コード: %d)";
+"error.httpStatus" = "エラー: HTTPステータス %d\n詳細: %@...";
+"error.conversionFailed" = "変換に失敗しました";
+"error.learningResetFailed" = "学習データのリセットに失敗しました";
+
+// MARK: - Common
+"common.help" = "ヘルプ";

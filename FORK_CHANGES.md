@@ -88,6 +88,35 @@ Memory directory:
 
 The menu bar icons (`main.tiff`, `main@2x.tiff`, `en.tiff`, `en@2x.tiff`) are template images that work with both light and dark mode.
 
+## Localization
+
+XiaoLi IME supports three languages:
+- English (`en.lproj`)
+- Japanese (`ja.lproj`)
+- Simplified Chinese (`zh-Hans.lproj`)
+
+### Localization Files
+
+Each language directory contains:
+- `InfoPlist.strings` - App name and input source names
+- `Localizable.strings` - All UI strings
+
+### Localized UI Elements
+
+- Menu items (Live Conversion, Smart Conversion, Settings)
+- Settings window (all tabs: Basic, Customize, Advanced)
+- User dictionary editor
+- Romaji table editor
+- Error messages
+- Help text
+
+### Adding New Languages
+
+1. Create a new `.lproj` directory (e.g., `ko.lproj` for Korean)
+2. Copy `Localizable.strings` and `InfoPlist.strings` from an existing language
+3. Translate all string values
+4. Add the language to the Xcode project's localization settings
+
 ## Dependencies
 
 No dependency changes were made. The project still uses:
