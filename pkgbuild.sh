@@ -1,7 +1,8 @@
 set -ex
 
 PROJECT_NAME="azooKeyMac"
-SCHEME="azooKeyMac"
+SCHEME="XiaoLiIME"
+# Note: The Xcode project is still named azooKeyMac but produces XiaoLiIME.app
 APP_NAME="XiaoLiIME"
 CONFIGURATION="Release"
 ARCHIVE_PATH="./build/archive.xcarchive"

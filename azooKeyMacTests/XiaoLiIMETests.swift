@@ -1,14 +1,14 @@
 //
-//  azooKeyMacTests.swift
-//  azooKeyMacTests
+//  XiaoLiIMETests.swift
+//  XiaoLiIMEMacTests
 //
 //  Created by β α on 2021/09/07.
 //
 
 import XCTest
-@testable import azooKeyMac
+@testable import XiaoLiIME
 
-class azooKeyMacTests: XCTestCase {
+class XiaoLiIMETests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

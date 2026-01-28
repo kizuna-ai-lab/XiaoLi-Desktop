@@ -107,8 +107,8 @@ extension XiaoLiInputController {
     // MARK: - Application Support Directory
     func prepareApplicationSupportDirectory() {
         do {
-            self.segmentsManager.appendDebugMessage("\(#line): Applicatiion Support Directory Path: \(self.segmentsManager.azooKeyMemoryDir)")
-            try FileManager.default.createDirectory(at: self.segmentsManager.azooKeyMemoryDir, withIntermediateDirectories: true)
+            self.segmentsManager.appendDebugMessage("\(#line): Applicatiion Support Directory Path: \(self.segmentsManager.xiaoliMemoryDir)")
+            try FileManager.default.createDirectory(at: self.segmentsManager.xiaoliMemoryDir, withIntermediateDirectories: true)
         } catch {
             self.segmentsManager.appendDebugMessage("\(#line): \(error.localizedDescription)")
         }

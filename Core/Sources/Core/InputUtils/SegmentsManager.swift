@@ -122,11 +122,11 @@ public final class SegmentsManager {
 
     private var metadata: ConvertRequestOptions.Metadata {
         if let tag = PackageMetadata.gitTag {
-            .init(versionString: "azooKey on macOS (\(tag))")
+            .init(versionString: "XiaoLi IME on macOS (\(tag))")
         } else if let commit = PackageMetadata.gitCommit {
-            .init(versionString: "azooKey on macOS (\(commit.prefix(7)))")
+            .init(versionString: "XiaoLi IME on macOS (\(commit.prefix(7)))")
         } else {
-            .init(versionString: "azooKey on macOS (unknown version)")
+            .init(versionString: "XiaoLi IME on macOS (unknown version)")
         }
     }
 
@@ -143,8 +143,8 @@ public final class SegmentsManager {
             englishCandidateInRoman2KanaInput: false,
             fullWidthRomanCandidate: true,
             learningType: Config.Learning().value.learningType,
-            memoryDirectoryURL: self.azooKeyMemoryDir,
-            sharedContainerURL: self.azooKeyMemoryDir,
+            memoryDirectoryURL: self.xiaoliMemoryDir,
+            sharedContainerURL: self.xiaoliMemoryDir,
             textReplacer: .withDefaultEmojiDictionary(),
             specialCandidateProviders: KanaKanjiConverter.defaultSpecialCandidateProviders,
             zenzaiMode: self.zenzaiMode(leftSideContext: leftSideContext, requestRichCandidates: requestRichCandidates),
@@ -152,7 +152,7 @@ public final class SegmentsManager {
         )
     }
 
-    public var azooKeyMemoryDir: URL {
+    public var xiaoliMemoryDir: URL {
         self.applicationDirectoryURL
     }
 

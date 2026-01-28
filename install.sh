@@ -23,7 +23,7 @@ if [ "$IGNORE_LINT" = false ]; then
         swiftlint --quiet --strict
     else
         echo "swiftlint could not be found. Please rerun the script as \`./install.sh --ignore-lint\`."
-        echo "For contributing azooKey on macOS, we strongly recommend you to install swiftlint"
+        echo "For contributing to XiaoLi IME on macOS, we strongly recommend you to install swiftlint"
         echo "To install swiftlint, run \`brew install swiftlint\`"
         exit 1
     fi
@@ -35,20 +35,20 @@ fi
 # Check if xcpretty is installed
 if command -v xcpretty &> /dev/null
 then
-    xcodebuild -project azooKeyMac.xcodeproj -scheme azooKeyMac clean archive -archivePath build/archive.xcarchive | xcpretty
+    xcodebuild -project azooKeyMac.xcodeproj -scheme XiaoLiIME clean archive -archivePath build/archive.xcarchive | xcpretty
 else
     echo "xcpretty could not be found. Proceeding without xcpretty."
-    xcodebuild -project azooKeyMac.xcodeproj -scheme azooKeyMac clean archive -archivePath build/archive.xcarchive
+    xcodebuild -project azooKeyMac.xcodeproj -scheme XiaoLiIME clean archive -archivePath build/archive.xcarchive
 fi
 
 if [ "$DRY_RUN" = true ]; then
     echo "DRY RUN: Would execute the following commands:"
-    echo "  sudo rm -rf /Library/Input\ Methods/azooKeyMac.app"
-    echo "  sudo cp -r build/archive.xcarchive/Products/Applications/azooKeyMac.app /Library/Input\ Methods/"
-    echo "  pkill azooKeyMac"
+    echo "  sudo rm -rf /Library/Input\ Methods/XiaoLiIME.app"
+    echo "  sudo cp -r build/archive.xcarchive/Products/Applications/XiaoLiIME.app /Library/Input\ Methods/"
+    echo "  pkill XiaoLiIME"
     echo "Build completed successfully. Use without --dry-run to actually install."
 else
-    sudo rm -rf /Library/Input\ Methods/azooKeyMac.app
-    sudo cp -r build/archive.xcarchive/Products/Applications/azooKeyMac.app /Library/Input\ Methods/
-    pkill azooKeyMac
+    sudo rm -rf /Library/Input\ Methods/XiaoLiIME.app
+    sudo cp -r build/archive.xcarchive/Products/Applications/XiaoLiIME.app /Library/Input\ Methods/
+    pkill XiaoLiIME
 fi
