@@ -1,8 +1,14 @@
 # XiaoLi IME (小李输入法)
 
-XiaoLi IME is a Japanese input method for macOS, forked from [azooKey-Desktop](https://github.com/azooKey/azooKey-Desktop). It features the high-precision neural kana-kanji conversion engine "Zenzai".
+**使用漢語拼音輸入日語漢字的輸入法**
 
-**Currently in alpha - functionality is not guaranteed.**
+小李輸入法是一款專為特定用戶群體設計的日語輸入法：**完全忽略音讀（音読み）和訓讀（訓読み），直接使用漢語拼音錄入日語漢字字形**。
+
+適用於基本不懂日語並且也無意深入學習，但是又有一定日語書寫需求的人。（沒錯，這個命名正是對學習新標日小李赴日的 neta）
+
+本項目的拼音日語輸入概念源自 [rime-pinyin-jap](https://github.com/tumuyan/rime-pinyin-jap)，技術實現基於 [azooKey-Desktop](https://github.com/azooKey/azooKey-Desktop)，使用高精度神經網絡假名漢字轉換引擎「Zenzai」。
+
+**目前處於 alpha 階段，功能尚不穩定。**
 
 ## Features
 
