@@ -94,7 +94,7 @@ extension XiaoLiInputController {
     }
 
     @objc func openGitHubRepository(_ sender: Any) {
-        guard let url = URL(string: "https://github.com/XiaoLi-IME/XiaoLi-Desktop") else {
+        guard let url = URL(string: "https://github.com/kizuna-ai-lab/XiaoLi-Desktop") else {
             return
         }
         NSWorkspace.shared.open(url)
