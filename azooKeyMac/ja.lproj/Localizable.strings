@@ -84,6 +84,11 @@
 // MARK: - Customize Tab - Keyboard Layout
 "settings.keyboardLayout" = "キーボード配列";
 
+// MARK: - Customize Tab - Pinyin Lookup
+"settings.pinyinLookup" = "拼音混合入力";
+"settings.pinyinLookup.enable" = "拼音入力を有効にする";
+"settings.pinyinLookup.help" = "ローマ字入力と同時に中国語拼音も認識し、日本語漢字に変換します。\n例: watashinoxiansheng → 私の先生";
+
 // MARK: - Advanced Tab - Zenzai
 "settings.zenzai" = "Zenzai設定";
 "settings.zenzai.inferenceLimit" = "Zenzaiの推論上限";

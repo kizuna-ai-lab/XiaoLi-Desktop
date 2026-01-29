@@ -56,4 +56,11 @@ extension Config {
         static let `default` = true
         public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.includeContextInAITransform"
     }
+
+    /// 拼音入力を有効化する設定（ローマ字入力と同時に中国語拼音も認識）
+    public struct EnablePinyinLookup: BoolConfigItem {
+        public init() {}
+        static let `default` = false
+        public static let key: String = "ai.kizuna.inputmethod.XiaoLiIME.preference.enablePinyinLookup"
+    }
 }

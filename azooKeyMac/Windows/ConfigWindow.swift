@@ -21,6 +21,7 @@ struct ConfigWindow: View {
     @ConfigState private var systemUserDictionary = Config.SystemUserDictionary()
     @ConfigState private var keyboardLayout = Config.KeyboardLayout()
     @ConfigState private var aiBackend = Config.AIBackendPreference()
+    @ConfigState private var enablePinyinLookup = Config.EnablePinyinLookup()
 
     @State private var selectedTab: Tab = .basic
     @State private var zenzaiProfileHelpPopover = false
@@ -470,6 +471,13 @@ struct ConfigWindow: View {
                 }
             } header: {
                 Label("settings.keyboardLayout", systemImage: "keyboard.badge.ellipsis")
+            }
+
+            Section {
+                Toggle("settings.pinyinLookup.enable", isOn: $enablePinyinLookup)
+                    .help(NSLocalizedString("settings.pinyinLookup.help", comment: "Pinyin lookup help"))
+            } header: {
+                Label("settings.pinyinLookup", systemImage: "character.book.closed.zh")
             }
         }
         .formStyle(.grouped)

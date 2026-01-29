@@ -31,6 +31,9 @@ public final class SegmentsManager {
     private var zenzaiPersonalizationLevel: Config.ZenzaiPersonalizationLevel.Value {
         Config.ZenzaiPersonalizationLevel().value
     }
+    private var enablePinyinLookup: Bool {
+        Config.EnablePinyinLookup().value
+    }
     private var rawCandidates: ConversionResult?
 
     private var selectionIndex: Int?
@@ -160,6 +163,10 @@ public final class SegmentsManager {
     public func activate() {
         self.shouldShowCandidateWindow = false
         self.zenzaiPersonalizationMode = self.getZenzaiPersonalizationMode()
+        // Update pinyin lookup setting
+        self.kanaKanjiConverter.setPinyinLookupEnabled(self.enablePinyinLookup)
+        // Debug: log pinyin settings
+        self.appendDebugMessage("🔍 Pinyin lookup enabled: \(self.enablePinyinLookup)")
     }
 
     @MainActor
@@ -342,6 +349,10 @@ public final class SegmentsManager {
             self.kanaKanjiConverter.stopComposition()
             return
         }
+        // Update pinyin lookup setting (in case it changed since activation)
+        self.kanaKanjiConverter.setPinyinLookupEnabled(self.enablePinyinLookup)
+        // Debug: log raw input for pinyin lookup
+        self.appendDebugMessage("🔤 Raw input: \(self.composingText.rawRomanInput), pinyin: \(self.enablePinyinLookup)")
         // ユーザ辞書情報の更新
         var userDictionary: [DicdataElement] = userDictionary.items.map {
             .init(word: $0.word, ruby: $0.reading.toKatakana(), cid: CIDData.固有名詞.cid, mid: MIDData.一般.mid, value: -5)
