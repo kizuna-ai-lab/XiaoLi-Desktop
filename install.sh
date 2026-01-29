@@ -50,5 +50,18 @@ if [ "$DRY_RUN" = true ]; then
 else
     sudo rm -rf /Library/Input\ Methods/XiaoLiIME.app
     sudo cp -r build/archive.xcarchive/Products/Applications/XiaoLiIME.app /Library/Input\ Methods/
-    pkill XiaoLiIME
+    pkill XiaoLiIME || true
+    sleep 1
+    # Re-register input source using TIS API
+    swift - << 'EOF'
+import Carbon
+
+let bundleURL = URL(fileURLWithPath: "/Library/Input Methods/XiaoLiIME.app")
+let status = TISRegisterInputSource(bundleURL as CFURL)
+if status != noErr {
+    print("Warning: TISRegisterInputSource returned \(status)")
+}
+EOF
+    echo ""
+    echo "Installation complete."
 fi
