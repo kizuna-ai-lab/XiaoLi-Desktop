@@ -114,6 +114,9 @@ public enum UserAction {
             case .english:
                 return string.map { .character($0) }
             case .japanese:
+                // intention は標点符号の全角変換にのみ使用される（例："," → "、"）
+                // 英字・数字に対しては intention は nil となるため、InputTable が
+                // ローマ字→かな変換を行い、同時に元の input も保持されて拼音検索に利用可能
                 return string.map {
                     .key(intention: intention($0, invertPunctuation: invertPunctuation), input: $0, modifiers: [])
                 }

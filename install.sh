@@ -3,16 +3,31 @@ set -xe -o pipefail
 
 IGNORE_LINT=false
 DRY_RUN=false
+DEBUG_MODE=false
 
 # Parse command-line options
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --ignore-lint) IGNORE_LINT=true ;;
         --dry-run) DRY_RUN=true ;;
+        --debug) DEBUG_MODE=true ;;
         *) echo "Unknown parameter passed: $1"; exit 1 ;;
     esac
     shift
 done
+
+# Set configuration based on debug mode
+if [ "$DEBUG_MODE" = true ]; then
+    BUILD_CONFIG="Debug"
+    echo "Building in DEBUG mode..."
+else
+    BUILD_CONFIG="Release"
+    echo "Building in RELEASE mode..."
+fi
+
+# Always clean DerivedData cache to avoid configuration mismatch issues
+echo "Cleaning Xcode DerivedData cache..."
+rm -rf ~/Library/Developer/Xcode/DerivedData/azooKeyMac-*
 
 if [ "$IGNORE_LINT" = false ]; then
     if command -v swiftlint &> /dev/null
@@ -35,10 +50,10 @@ fi
 # Check if xcpretty is installed
 if command -v xcpretty &> /dev/null
 then
-    xcodebuild -project azooKeyMac.xcodeproj -scheme XiaoLiIME clean archive -archivePath build/archive.xcarchive | xcpretty
+    xcodebuild -project azooKeyMac.xcodeproj -scheme XiaoLiIME -configuration "$BUILD_CONFIG" clean archive -archivePath build/archive.xcarchive CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO | xcpretty
 else
     echo "xcpretty could not be found. Proceeding without xcpretty."
-    xcodebuild -project azooKeyMac.xcodeproj -scheme XiaoLiIME clean archive -archivePath build/archive.xcarchive
+    xcodebuild -project azooKeyMac.xcodeproj -scheme XiaoLiIME -configuration "$BUILD_CONFIG" clean archive -archivePath build/archive.xcarchive CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 fi
 
 if [ "$DRY_RUN" = true ]; then
@@ -63,5 +78,5 @@ if status != noErr {
 }
 EOF
     echo ""
-    echo "Installation complete."
+    echo "Installation complete. (Configuration: $BUILD_CONFIG)"
 fi
