@@ -29,6 +29,16 @@ fi
 echo "Cleaning Xcode DerivedData cache..."
 rm -rf ~/Library/Developer/Xcode/DerivedData/azooKeyMac-*
 
+# Update converter build identifier with timestamp and git info
+VERSION_FILE="../AzooKeyKanaKanjiConverter/Sources/KanaKanjiConverterModule/ConverterAPI/SpecialConversion/VersionCandidate.swift"
+if [ -f "$VERSION_FILE" ]; then
+    BUILD_TIME=$(date +"%Y-%m-%d-%H%M%S")
+    GIT_HASH=$(cd ../AzooKeyKanaKanjiConverter && git rev-parse --short HEAD 2>/dev/null || echo "nogit")
+    BUILD_ID="${BUILD_TIME}-${GIT_HASH}"
+    sed -i '' "s/converterBuildIdentifier = \".*\"/converterBuildIdentifier = \"${BUILD_ID}\"/" "$VERSION_FILE"
+    echo "Updated converterBuildIdentifier to: $BUILD_ID"
+fi
+
 if [ "$IGNORE_LINT" = false ]; then
     if command -v swiftlint &> /dev/null
     then
